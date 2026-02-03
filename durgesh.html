@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For Durgesh ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body{
+      margin:0;
+      height:100vh;
+      background:#ffe6f0;
+      font-family:Arial;
+      text-align:center;
+      overflow:hidden;
+    }
+    .box{
+      padding-top:70px;
+      position:relative;
+      z-index:2;
+    }
+    button{
+      padding:14px 26px;
+      font-size:18px;
+      border:none;
+      border-radius:10px;
+      margin:12px;
+      cursor:pointer;
+    }
+    #yes{
+      background:#ff4d88;
+      color:white;
+    }
+    #no{
+      position:absolute;
+    }
+    .heart{
+      position:fixed;
+      top:-20px;
+      font-size:26px;
+      animation: fall linear forwards;
+    }
+    @keyframes fall{
+      to{
+        transform:translateY(110vh);
+        opacity:0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box" id="box">
+  <h2>Durgesh,</h2>
+  <h1>Do you love me? 💖</h1>
+
+  <button id="yes" onclick="yes()">YES</button>
+  <button id="no" onmouseover="move()">NO</button>
+</div>
+
+<script>
+function move(){
+  let n=document.getElementById("no");
+  n.style.left=Math.random()*80+"%";
+  n.style.top=Math.random()*80+"%";
+}
+function yes(){
+  document.getElementById("box").innerHTML="<h1>I love you ❤️🥰</h1>";
+  setInterval(makeHeart,250);
+}
+function makeHeart(){
+  let h=document.createElement("div");
+  h.className="heart";
+  h.innerHTML="💖";
+  h.style.left=Math.random()*100+"vw";
+  h.style.animationDuration=(2+Math.random()*3)+"s";
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),5000);
+}
+</script>
+
+</body>
+</html>
