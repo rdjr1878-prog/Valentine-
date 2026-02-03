@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>For Sanchita ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body{
+      margin:0;
+      height:100vh;
+      background:#ffe6f0;
+      text-align:center;
+      font-family:Arial;
+      overflow:hidden;
+    }
+    .box{
+      padding-top:60px;
+      position:relative;
+      z-index:2;
+    }
+    button{
+      padding:12px 22px;
+      font-size:18px;
+      border:none;
+      border-radius:8px;
+      margin:10px;
+      cursor:pointer;
+    }
+    #yes{
+      background:#ff4d88;
+      color:white;
+    }
+    #no{
+      position:absolute;
+    }
+    .heart{
+      position:fixed;
+      top:-20px;
+      font-size:24px;
+      animation: fall linear forwards;
+    }
+    @keyframes fall{
+      to{
+        transform: translateY(110vh);
+        opacity:0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box" id="box">
+  <h2>Sanchita,</h2>
+  <h1>Will you be my Valentine? 💖</h1>
+
+  <button id="yes" onclick="yes()">YES</button>
+  <button id="no" onmouseover="move()">NO</button>
+</div>
+
+<script>
+function move(){
+  let no=document.getElementById("no");
+  no.style.left=Math.random()*80+"%";
+  no.style.top=Math.random()*80+"%";
+}
+
+function yes(){
+  document.getElementById("box").innerHTML="<h1>I love you ❤️🥰</h1>";
+  setInterval(createHeart,300);
+}
+
+function createHeart(){
+  const heart=document.createElement("div");
+  heart.className="heart";
+  heart.innerHTML="❤️";
+  heart.style.left=Math.random()*100+"vw";
+  heart.style.animationDuration=(2+Math.random()*3)+"s";
+  document.body.appendChild(heart);
+  setTimeout(()=>heart.remove(),5000);
+}
+</script>
+
+</body>
+</html>
