@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Valentine 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="background:#ffe6f0;text-align:center;font-family:Arial;padding-top:60px;">
+
+<h2>Shivani,</h2>
+<h1>Will you be my Valentine? 💖</h1>
+
+<button onclick="yes()" style="padding:12px 22px;font-size:18px;border:none;border-radius:8px;background:#ff4d88;color:white;">YES</button>
+<button id="no" onmouseover="move()" style="padding:12px 22px;font-size:18px;border:none;border-radius:8px;">NO</button>
+
+<script>
+function move(){
+  document.getElementById("no").style.position="absolute";
+  document.getElementById("no").style.left=Math.random()*80+"%";
+  document.getElementById("no").style.top=Math.random()*80+"%";
+}
+function yes(){
+  document.body.innerHTML="<h1>Yayyy ❤️ I knew it 😍</h1>";
+}
+</script>
+
+</body>
+</html>
